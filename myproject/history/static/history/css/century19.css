@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+h1{
+    color: #101010;
+    font-size: 70px;
+    font-style: oblique;
+   
+}
+
+.image { width: 300px; /* 写真の幅を300pxに設定 */ 
+    height: auto; /* 縦横比を保つための自動調整 */
+    position: relative; /* 相対位置に設定 */
+  top: -40px; /* 元の位置から20px下に移動 */
+  left: 1500px; /* 元の位置から30px右に移動 */ }
+
+p{
+    font-size: 24px;
+}
+a{
+  color:rgb(13, 15, 18);
+  font-size: 20px;
+  font-weight: bold;
+}
+body{
+    color: rgb(21, 21, 21);
+    background-color: rgb(138, 140, 142);
+    overflow: hidden; /* スクロールを無効にする */
+}
+.figcaption-class {
+    font-size: 14px; /* フォントサイズを設定 */
+    color: #333; /* テキストの色を設定 */
+    text-align: center; /* テキストを中央揃え */
+    margin-top: 10px; /* 上部のマージンを設定 */
+    position: relative; /* 相対位置に設定 */
+    top: -100px; /* 元の位置から20px下に移動 */
+    left: 1500px; /* 元の位置から30px右に移動 */
+}
+
+
+.fixed{
+    position: relative; top: 30px; left: 0px;
+    display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  color: rgb(249, 246, 246);
+  background-color: #404045; /* ボタンの背景色 */
+  border: none;
+  border-radius: 5px; /* 角を丸くする */
+  text-align: right;
+  text-decoration: none; /* 下線を消す */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-family: cursive;
+}
+
+.fixed:hover {
+    background-color: #0c0c0c; /* ホバー時の背景色 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* ホバー時のシャドウ */
+  }
+
+

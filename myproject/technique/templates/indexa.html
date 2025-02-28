@@ -1,0 +1,39 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+    <link rel="stylesheet" href="{% static 'technique/css/index0.css' %}">
+</head>
+<body>
+    <h1>バレエの技能</h1>
+    <ul class="movie-list">
+        {% for item in movies %}
+        <li>
+            <a href="{{ item.2 }}" target="_blank">
+                <img src="{% static 'technique/images/' %}{{ item.1 }}" width="200" height="200"> 
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'accounts:index' %}" class="fixed">もどる</a>
+    <a href="{% url 'technique:indexb' %}" class="fixed">これらはどんな技？</a>
+
+    
+
+
+
+</body>
+</html>
+
+
+       
+            
+
+
+
+
+
+

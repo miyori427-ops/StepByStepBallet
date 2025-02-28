@@ -1,0 +1,24 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'variation/css/result.css' %}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    
+    <h1>ブルーバードが好きな方はこちらも好きかもしれません</h1>
+
+    <p><a href="{% url 'talisman' %}"class="normal-link">タリスマンのバリエーション</a></p>
+    <p><a href="{% url 'Paris' %}"class="normal-link">ジャンヌのヴァリエーション</a></p>
+    <p><a href="{% url 'Cinderella' %}"class="normal-link">ファンダンゴバリエーション</a></p>
+    <p><a href="{% url 'Kaizoku' %}"class="normal-link">メドーラのバリエーション</a></p>
+
+    <p><a href="{% url 'form' %}"class="normal-link2">コメント投稿</a></p>
+    <p><a href="{% url 'variation' %}"class="normal-link2">フォームに戻る</a></p>
+   
+</body>
+</html>

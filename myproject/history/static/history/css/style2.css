@@ -1,0 +1,80 @@
+@charset "utf-8";
+body {
+  background-color:white;
+  overflow: hidden; /* スクロールを無効にする */
+}
+.down{
+position: absolute; /* 絶対位置に設定 */
+bottom: -265px; /* ページの下端からの距離 */
+right: 10px;}
+
+.text {
+  display: inline; 
+  text-align: right; /* テキストを右揃え */
+}
+
+
+.image {
+  width: 750px; /* 写真の幅を200pxに設定 */
+  height: auto; /* 縦横比を保つための自動調整 */
+  margin-left: 20px; /* 写真とテキストの間にスペース */
+  left: -60px;
+}
+
+
+.normal-link {
+  position: relative; /* 相対位置に設定 */
+  top: -300px; /* 元の位置から20px下に移動 */
+  left: -100px; /* 元の位置から30px右に移動 */
+  margin-right: 10px; /* 適宜スペースを調整 */
+  font-size: 24px;
+  color: rgb(19, 19, 19);
+  border: none;
+  text-align: right; 
+  text-decoration: underline; 
+  transition: background-color 0.3, box-shadow 0.3s;
+  font-family: serif;
+}
+
+.normal-link:hover {
+  background-color: #c6ceca; /* ホバー時の背景色 */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* ホバー時のシャドウ */
+}
+
+.special-link {
+  position: relative; /* 相対位置に設定 */
+  top: -300px; /* 元の位置から20px下に移動 */
+  left: -100px; /* 元の位置から30px右に移動 */
+  padding: 20px 20px;
+  font-size: 14px;
+  color: white;
+  background-color: #0c0c0f; /* ボタンの背景色 */
+  border: none;
+  border-radius: 5px; /* 角を丸くする */
+  text-decoration: none; /* 下線を消す */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-family: serif;
+}
+
+.special-link:hover {
+  background-color: #b8a7ec; /* ホバー時の背景色 */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* ホバー時のシャドウ */
+}
+.modoru-link {
+  display: inline;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: white;
+  background-color: #0c0c0f; /* ボタンの背景色 */
+  border: none;
+  border-radius: 5px; /* 角を丸くする */
+  text-align: right;
+  text-decoration: none; /* 下線を消す */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-family: serif;
+}
+
+.modoru-link:hover {
+  background-color: #7f7c88; /* ホバー時の背景色 */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* ホバー時のシャドウ */
+}

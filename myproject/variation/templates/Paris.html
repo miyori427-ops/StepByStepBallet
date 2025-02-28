@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Link</title>
+    <style>
+        .thumbnail {
+            display: block;
+            margin: 0 auto; /* 左右中央揃え */
+            width: 760px; /* サムネイル画像の幅 */
+            height: 615px; /* サムネイル画像の高さ */
+            cursor: pointer;
+        
+        }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 200%;
+            line-height: 1.6;
+            background-color: #656763;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container{
+            position: absolute; /* または relative */
+            bottom: 0;
+            left: 0;
+            text-align: left;
+
+        }
+
+        a{
+            color: black;
+        }
+
+        
+.fixed{
+    position: relative; top: 30px; left: 0px;
+    display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  color: rgb(249, 246, 246);
+  background-color: #404045; /* ボタンの背景色 */
+  border: none;
+  border-radius: 5px; /* 角を丸くする */
+  text-align: right;
+  text-decoration: none; /* 下線を消す */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-family: cursive;
+}
+
+.fixed:hover {
+    background-color: #0c0c0c; /* ホバー時の背景色 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* ホバー時のシャドウ */
+  }
+
+    </style>
+     <h1>ジャンヌのヴァリエーション</h1>
+</head>
+<body>
+    <P>パリの炎は、フランス革命歌を基にしたボリス・アサフィエフの音楽と、ヴィシリー・ワイノーネンによる振り付けの４幕のバレエ作品である。１８世紀のフランスが舞台であるが、１９３２年の１０月革命１５周年を記念してソ連により製作された。義勇兵によるテュイルリー宮殿襲撃と国王夫妻のパリへの連行を扱った革命もののバレエで、ソ連政府の専制に対する革命の勝利を支持する意向に沿った作品である。</P>
+    
+    <header>
+    </header>
+
+    <main>
+        <section>
+            
+            <a href="https://www.youtube.com/watch?v=4gL86DwBYsg" target="_blank">
+                <img class="thumbnail" src="https://img.youtube.com/vi/4gL86DwBYsg/hqdefault.jpg" alt="Video Thumbnail">
+            </a>
+        </section>
+    </main>
+    <div class="container">
+<p><a href="https://www.bing.com/search?q=%E3%83%91%E3%83%AA%E3%81%AE%E7%82%8E&form=ANNTH1&refig=fdda54f2651c4ef59682686768d2e849&pc=HCTS" target="_blank"class="rightbottom">参考文献</a></p>
+    </div>
+    <p><a href="{% url 'result' %}"class="fixed">ひとつ前のページ</a></p>
+
+</body>
+</html>

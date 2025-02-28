@@ -1,0 +1,14 @@
+h1{
+    color: rgb(224, 109, 217);
+   }
+
+body{
+  background-color: aliceblue;
+  background-image: url(背景.webp);
+}
+
+ 
+  .image {
+    right: 0;
+    position: absolute;
+  }

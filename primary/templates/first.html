@@ -1,0 +1,49 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'primary/css/footp.css' %}">
+</head>
+<body>
+    <div class="saisho">
+    <h1>脚のポジション:バレエには基本となる６つの脚のポジションがあります</h1>
+</div>
+<div class="image-container">
+<div class="image-row">
+    <h1>一番</h1>
+    <p>
+        <p><img src=  "{% static 'primary/images/foot1.jpg' %}"></p>
+      
+    <h1>二番</h1>
+    <p>
+    </p>
+    <p><img src="{% static 'primary/images/foot2.jpg' %}" ></p>
+
+    <h1>3番 </h1>
+    <p><img src="{% static 'primary/images/foot3.jpg' %}" ></p>
+     
+    </div>
+    <div class="image-row">
+
+    <h1> 4番</h1>
+    <p></p>
+    <p><img src="{% static 'primary/images/foot4.jpg' %}"></p>
+    <h1> ５番
+    </h1>
+    <p></p>
+    <p><img src="{% static 'primary/images/foot5.jpg' %}"></p>
+
+    <h1>６番</h1>
+    <p>　</p>
+    <p><img src="{% static 'primary/images/foot6.jpg' %}" ></p>
+   </div>
+</div>
+
+
+
+<a href="{% url 'accounts:index'%}" class="fixed">前のページ</a>
+  
+ 
+   

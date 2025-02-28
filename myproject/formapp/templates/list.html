@@ -1,0 +1,54 @@
+<style>
+    body{
+        background-color: #0c0c0c;
+    }
+    .post{
+        font-family: Arial, sans-serif;
+        font-size: 30px;
+        line-height: 1.6;
+        background-color: #6d6f6f;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    
+.fixed{
+position: relative; top: 30px; left: 0px;
+display: inline-block;
+padding: 10px 20px;
+font-size: 24px;
+color: rgb(249, 246, 246);
+background-color: #404045; /* ボタンの背景色 */
+border: none;
+border-radius: 5px; /* 角を丸くする */
+text-align: right;
+text-decoration: none; /* 下線を消す */
+transition: background-color 0.3s, box-shadow 0.3s;
+font-family: cursive;
+}
+
+.fixed:hover {
+background-color: #0c0c0c; /* ホバー時の背景色 */
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* ホバー時のシャドウ */
+}
+
+
+    
+    
+
+</style>
+<div class="container">
+    {% for post in object_list %}
+    <div class="post">
+      <p>タイトル：{{ post.title }}</p>
+      <p>メモ：{{ post.memo }}</p>
+     
+    </div>
+    {% endfor %}
+    <div class="form">
+      <a href="{% url 'form' %}"class="fixed">新規投稿</a>
+    </div>
+  </div>
+  <p><a href="{% url 'form' %}"class="fixed">戻る</a></p>
