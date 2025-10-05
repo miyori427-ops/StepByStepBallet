@@ -1,0 +1,80 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'bar/css/every.css' %}">
+  <title>temps de cuisse</title>
+
+<script type="importmap">
+{
+    "imports": {
+        "three": "https://unpkg.com/three@0.162.0/build/three.module.js",
+        "three/examples/jsm/loaders/GLTFLoader": "https://unpkg.com/three@0.162.0/examples/jsm/loaders/GLTFLoader.js"
+    }
+}
+</script>
+
+<script type="module" src="{% static 'bar/main.js' %}"></script>
+
+</head>
+<body>
+<a href="{% url 'bar:st' %}"class="fixed">←</a>
+
+<p>タン・ド・キュイス</p>
+
+<div class="btn-container">
+  <div class="btn" id="toggle-btn">▶</div>
+  <div class="btn" id ="reverse-btn">←</div>
+  <div class="btn" id ="slow-btn">×0.5</div>
+</duv>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    window.modelPath = "{% static 'bar/models/tampcu.glb' %}";
+  </script>
+
+ <script type="module">
+
+import { loadModel, startAnimation, stopAnimation , reverseanimation, slowdown} from "{% static 'bar/main.js' %}";
+
+let started = false; // 状態を管理するためのフラグ
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  loadModel();
+})
+
+document.getElementById('toggle-btn').addEventListener('click', async () => {
+
+  const button = document.getElementById('toggle-btn');
+
+  if (!started) {
+    // 開始処理
+    if (typeof startAnimation === 'function') {
+      startAnimation();
+    }
+    started = true;
+    button.textContent = '⏸'; // ボタンのラベルを「停止」に変更
+    
+  } else {
+    // 停止処理
+    if (typeof stopAnimation === 'function') {
+      stopAnimation();
+    }
+    started = false;
+    button.textContent = '▶'; // ボタンのラベルを「開始」に変更
+    
+  }
+});
+document.getElementById('reverse-btn').addEventListener('click', async () => {
+  reverseanimation()
+})
+
+document.getElementById('slow-btn').addEventListener('click', async() =>{
+  slowdown()
+})
+  </script>
+
+</body>
+</html>

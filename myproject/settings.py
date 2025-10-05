@@ -24,8 +24,7 @@ SECRET_KEY = 'django-insecure-^s9w%@@w-56e_i-^r-@@sbug)3j#v_s^%&dsc8%fu#ilfyyer!
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['*','.herokuapp.com', 'localhost']
 
 # Application definition
 
@@ -38,26 +37,23 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #'seminar',
     'myproject',
-    'myproject.acting',
-    'myproject.technique',
-    'myproject.variation',
-    'myproject.history',
-    'accounts',
-    'primary',
-    'formapp',
-
+    'bar',
+    'center',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-     #'simple_history.middleware.HistoryRequestMiddleware'
 ]
+     #'simple_history.middleware.HistoryRequestMiddleware'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 ROOT_URLCONF = 'myproject.urls'
 
@@ -79,19 +75,29 @@ TEMPLATES = [
 ]
 
 
-#WSGI_APPLICATION = 'djangoproject.wsgi.application'
+WSGI_APPLICATION = 'myproject.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# Set default values for the environment variables if they’re not already set
+os.environ.setdefault("PGDATABASE", "liftoff_dev")
+os.environ.setdefault("PGUSER", "postgres")
+os.environ.setdefault("PGPASSWORD", "12345")
+os.environ.setdefault("PGHOST", "localhost")
+os.environ.setdefault("PGPORT", "5432")
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ["PGDATABASE"],
+        'USER': os.environ["PGUSER"],
+        'PASSWORD': os.environ["PGPASSWORD"],
+        'HOST': os.environ["PGHOST"],
+        'PORT': os.environ["PGPORT"],
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -137,14 +143,14 @@ STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,"static"),
+    os.path.join(BASE_DIR, "static"),
 )
 
-DEBUG = True
+DEBUG = False
 
 LOGGING = {
     'version': 1,
@@ -163,11 +169,12 @@ LOGGING = {
     },
 }
 
-LOGIN_REDIRECT_URL = "accounts:index"
-LOGOUT_REDIRECT_URL = "accounts:login"
+#LOGIN_REDIRECT_URL = "accounts:index"
+#LOGOUT_REDIRECT_URL = "accounts:login"
 #LOGIN_REDIRECT_URL = "home"
 
-AUTH_USER_MODEL = 'accounts.User'
+#AUTH_USER_MODEL = 'accounts.User'
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
