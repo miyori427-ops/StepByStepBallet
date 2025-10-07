@@ -23,7 +23,7 @@ app_name = "myproject"
 urlpatterns = [
     #spath('', views.indexa, name='indexa'),
     #path('', include("accounts.urls")),
-    path('', include("center.urls")),
+    path('', include("myproject.center.urls")),
     #path("technique/", include("technique.urls")),
     path('admin/', admin.site.urls),
     #path('', views.IndexView.as_view(), name="indexa"),  # viewsはaccountsからインポートされている
@@ -33,7 +33,7 @@ urlpatterns = [
     #path('primary/', include('primary.urls')),
     #path('formapp/', include('formapp.urls')),
     #path('formapp2/', include('formapp2.urls')),
-    path('bar/', include('bar.urls')),
+    path('bar/', include('myproject.bar.urls')),
     #path('center/', include('center.urls')),
     #path('signup/', views.SignupView.as_view(), name="signup"),  # 同じくviewsはaccountsから
    # path('accounts/', include("accounts.urls")),  # accounts.urlsをインクルード
