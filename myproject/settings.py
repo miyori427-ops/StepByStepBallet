@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #'seminar',
     'myproject',
-    'bar',
-    'center',
+    'myproject.bar.apps.BarConfig',
+    'myproject.center.apps.CenterConfig',
 ]
 
 MIDDLEWARE = [

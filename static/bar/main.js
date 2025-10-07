@@ -4,7 +4,7 @@ import {OrbitControls} from 'https://unpkg.com/three@0.126.0/examples/jsm/contro
 import {GUI} from 'http://unpkg.com/three@0.126.0/examples/jsm/libs/dat.gui.module.js';
 
 let renderer, scene, camera, obj;
-let animationId, mixer,gui,mainAction;
+let animationId, mixer, gui, mainAction;
 let isAnimating = false;
 
 export function loadModel() {

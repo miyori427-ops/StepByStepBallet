@@ -2,5 +2,8 @@
     "python.analysis.extraPaths": [
         "./seminar",
         "./myproject"
-    ]
+    ],
+    "python.pythonPath": ".venu/Scripts/python.exe"
+
 }
+
