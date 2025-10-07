@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
 #from accounts import views  # myproject.viewsからインポート
 
 app_name = "myproject"
@@ -36,4 +37,4 @@ urlpatterns = [
     #path('center/', include('center.urls')),
     #path('signup/', views.SignupView.as_view(), name="signup"),  # 同じくviewsはaccountsから
    # path('accounts/', include("accounts.urls")),  # accounts.urlsをインクルード
-]
+] 
