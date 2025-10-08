@@ -17,24 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-#from accounts import views  # myproject.viewsからインポート
-
 app_name = "myproject"
 urlpatterns = [
-    #spath('', views.indexa, name='indexa'),
-    #path('', include("accounts.urls")),
     path('', include("myproject.center.urls")),
-    #path("technique/", include("technique.urls")),
     path('admin/', admin.site.urls),
-    #path('', views.IndexView.as_view(), name="indexa"),  # viewsはaccountsからインポートされている
-    #path('acting/', include('acting.urls')),
-   # path('history/', include('history.urls')),
-    #path('variation/', include('variation.urls')),
-    #path('primary/', include('primary.urls')),
-    #path('formapp/', include('formapp.urls')),
-    #path('formapp2/', include('formapp2.urls')),
     path('bar/', include('myproject.bar.urls')),
-    #path('center/', include('center.urls')),
-    #path('signup/', views.SignupView.as_view(), name="signup"),  # 同じくviewsはaccountsから
-   # path('accounts/', include("accounts.urls")),  # accounts.urlsをインクルード
 ] 
