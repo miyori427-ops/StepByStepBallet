@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import {OrbitControls} from 'https://unpkg.com/three@0.180.0/examples/jsm/controls/OrbitControls.js';
-import {GUI} from 'https://unpkg.com/lil-gui@0.18.0/dist/lil-gui.esm.js';
+import {OrbitControls} from 'https://unpkg.com/three@0.126.0/examples/jsm/controls/OrbitControls.js';
+import {GUI} from 'https://unpkg.com/three@0.126.0/examples/jsm/libs/dat.gui.module.js';
 
 let renderer, scene, camera, obj;
 let animationId, mixer, gui, mainAction;
