@@ -169,11 +169,6 @@ LOGGING = {
     },
 }
 
-#LOGIN_REDIRECT_URL = "accounts:index"
-#LOGOUT_REDIRECT_URL = "accounts:login"
-#LOGIN_REDIRECT_URL = "home"
-
-#AUTH_USER_MODEL = 'accounts.User'
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
