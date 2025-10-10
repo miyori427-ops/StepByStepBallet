@@ -31,7 +31,7 @@
   <canvas id="canvas"></canvas>
 
   <script>
-    window.modelPath = "{% static 'bar/models/realgrandjete.glb' %}";
+    window.modelPath = "{% static 'bar/models/Tgrandjete.glb' %}";
   </script>
 
 <script type="module">
@@ -39,6 +39,8 @@
 import { loadModel, startAnimation, stopAnimation , reverseanimation, slowdown} from "{% static 'bar/main.js' %}";
 
 let started = false; // 状態を管理するためのフラグ
+let slowing= false, reversing=false;
+const button = document.getElementById('toggle-btn');
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -47,13 +49,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('toggle-btn').addEventListener('click', async () => {
 
-  const button = document.getElementById('toggle-btn');
 
   if (!started) {
     // 開始処理
     if (typeof startAnimation === 'function') {
       startAnimation();
+
+    if(slowing==true){
+      slowdown();
     }
+    if(reversing==true){
+      reverseanimation();
+    }
+      
+    }
+
+
     started = true;
     button.textContent = '⏸'; // ボタンのラベルを「停止」に変更
     
@@ -69,11 +80,18 @@ document.getElementById('toggle-btn').addEventListener('click', async () => {
 });
 document.getElementById('reverse-btn').addEventListener('click', async () => {
   reverseanimation()
+  button.textContent = '⏸';
+  started = true;
+  reversing = true;
 })
 
 document.getElementById('slow-btn').addEventListener('click', async() =>{
   slowdown()
+  button.textContent = '⏸';
+  started = true;
+  slowing = true;
 })
+
   </script>
 
 </body>

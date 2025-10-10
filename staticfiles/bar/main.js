@@ -61,6 +61,7 @@ export function loadModel() {
 }
 
 let clock = new THREE.Clock(); 
+
 function animate() {
     animationId = requestAnimationFrame(animate);
     const delta = clock.getDelta();
@@ -81,7 +82,7 @@ export function startAnimation() {
             mixer.timeScale=1.0;
         }
     }
-//startanimationがpauseを解除
+
 
 export function stopAnimation()
     {
@@ -91,14 +92,26 @@ export function stopAnimation()
     }
     }
 
-export function reverseanimation()
+export function reverseanimation(){
 
-    {
     console.log("reverse function called.");
+    isAnimating=true;
+    
+    if(mainAction){
+            mainAction.paused = false;
+            mainAction.play();
+        }
     mixer.timeScale = -mixer.timeScale;
     }
 
 export function slowdown() {
+    isAnimating=true;
+
+    if(mainAction){
+            mainAction.paused = false;
+            mainAction.play();
+        }
+
     console.log("slowdown function called.");
     if (mixer) {
         console.log("Mixer found:", mixer);

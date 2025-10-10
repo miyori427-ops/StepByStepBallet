@@ -127,8 +127,8 @@ def saubasq(request):
 def entrelace(request):
     return render(request, "entrelace.html")
 
-def realgrandjete(request):
-    return render(request, "realgrandjete.html")
+def grandjete(request):
+    return render(request, "grandjete.html")
 
 def coujetour(request):
     return render(request, "coujetour.html")
