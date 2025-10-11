@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import {OrbitControls} from 'https://unpkg.com/three@0.126.0/examples/jsm/controls/OrbitControls.js';
-import {GUI} from 'https://unpkg.com/three@0.126.0/examples/jsm/libs/dat.gui.module.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import GUI from 'lil-gui';
 
 let renderer, scene, camera, obj;
 let animationId, mixer, gui, mainAction;
@@ -20,7 +20,7 @@ export function loadModel() {
     const ambLight = new THREE.AmbientLight(0x333333);
     scene.add(ambLight);
     
-    const canvas = document.getElementById("canvas");
+    const canvas = document.querySelector("canvas");
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, canvas:canvas});
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);

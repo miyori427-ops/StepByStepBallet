@@ -8,10 +8,12 @@
 
 <script type="importmap">
 {
-    "imports": {
-        "three": "https://unpkg.com/three@0.162.0/build/three.module.js",
-        "three/examples/jsm/loaders/GLTFLoader": "https://unpkg.com/three@0.162.0/examples/jsm/loaders/GLTFLoader.js"
-    }
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+    "three/examples/jsm/loaders/GLTFLoader": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/loaders/GLTFLoader.js",
+    "three/examples/jsm/controls/OrbitControls": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/controls/OrbitControls.js",
+    "lil-gui": "https://cdn.jsdelivr.net/npm/lil-gui@0.18/+esm"
+  }
 }
 </script>
 
@@ -28,7 +30,7 @@
   <div class="btn" id ="reverse-btn">←</div>
   <div class="btn" id ="slow-btn">×0.5</div>
 </duv>
-  <canvas id="canvas"></canvas>
+<canvas></canvas>
 
   <script>
     window.modelPath = "{% static 'bar/models/Tgrandjete.glb' %}";
@@ -49,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('toggle-btn').addEventListener('click', async () => {
 
-
   if (!started) {
     // 開始処理
     if (typeof startAnimation === 'function') {
@@ -63,7 +64,6 @@ document.getElementById('toggle-btn').addEventListener('click', async () => {
     }
       
     }
-
 
     started = true;
     button.textContent = '⏸'; // ボタンのラベルを「停止」に変更
