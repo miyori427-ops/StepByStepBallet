@@ -30,7 +30,7 @@
   <div class="btn" id ="reverse-btn">←</div>
   <div class="btn" id ="slow-btn">×0.5</div>
 </div>
-  <canvas></canvas>
+<canvas></canvas>
 
   <script>
     window.modelPath = "{% static 'bar/models/assem.glb' %}";
@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('toggle-btn').addEventListener('click', async () => {
 
-
   if (!started) {
     // 開始処理
     if (typeof startAnimation === 'function') {
@@ -65,7 +64,6 @@ document.getElementById('toggle-btn').addEventListener('click', async () => {
     }
       
     }
-
 
     started = true;
     button.textContent = '⏸'; // ボタンのラベルを「停止」に変更
