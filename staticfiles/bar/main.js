@@ -83,7 +83,6 @@ export function startAnimation() {
         }
     }
 
-
 export function stopAnimation()
     {
     isAnimating=false;

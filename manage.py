@@ -1,8 +1,6 @@
 import sys
 import os
 
-# プロジェクトのパスを追加
-#sys.path.append(os.path.join(os.path.dirname(__file__), 'myproject'))
 
 if __name__ == "__main__":
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
