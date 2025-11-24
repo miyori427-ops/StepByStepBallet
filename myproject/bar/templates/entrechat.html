@@ -40,7 +40,7 @@
 
 import { loadModel, startAnimation, stopAnimation, reverseanimation, slowdown} from "{% static 'bar/main.js' %}";
 
-let started = false; // 状態を管理するためのフラグ
+let started = false; 
 let slowing= false, reversing=false;
 const button = document.getElementById('toggle-btn');
 
@@ -53,7 +53,7 @@ document.getElementById('toggle-btn').addEventListener('click', async () => {
 
 try{
     if (!started) {
-    // 開始処理
+
     if (typeof startAnimation === 'function') {
       startAnimation();
 
@@ -67,15 +67,15 @@ try{
     }
 
     started = true;
-    button.textContent = '⏸'; // ボタンのラベルを「停止」に変更
+    button.textContent = '⏸'; 
     
   } else {
-    // 停止処理
+   
     if (typeof stopAnimation === 'function') {
       stopAnimation();
     }
     started = false;
-    button.textContent = '▶'; // ボタンのラベルを「開始」に変更
+    button.textContent = '▶'; 
     
   }
 }catch(error){

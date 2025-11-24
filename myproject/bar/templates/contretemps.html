@@ -37,9 +37,9 @@
 
 <script type="module">
 
-import { loadModel, startAnimation, stopAnimation , reverseanimation, slowdown} from "{% static 'bar/main.js' %}";
+import { loadModel, startAnimation, stopAnimation, reverseanimation, slowdown} from "{% static 'bar/main.js' %}";
 
-let started = false; // 状態を管理するためのフラグ
+let started = false; 
 let slowing= false, reversing=false;
 const button = document.getElementById('toggle-btn');
 
@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('toggle-btn').addEventListener('click', async () => {
 
+try{
+    if (!started) {
 
-  if (!started) {
-    // 開始処理
     if (typeof startAnimation === 'function') {
       startAnimation();
 
@@ -65,28 +65,32 @@ document.getElementById('toggle-btn').addEventListener('click', async () => {
       
     }
 
-
     started = true;
-    button.textContent = '⏸'; // ボタンのラベルを「停止」に変更
+    button.textContent = '⏸'; 
     
   } else {
-    // 停止処理
+   
     if (typeof stopAnimation === 'function') {
       stopAnimation();
     }
     started = false;
-    button.textContent = '▶'; // ボタンのラベルを「開始」に変更
+    button.textContent = '▶'; 
     
   }
+}catch(error){
+  console.log("アニメーションロードに失敗しました");
+}
 });
-document.getElementById('reverse-btn').addEventListener('click', async () => {
+
+
+document.getElementById('reverse-btn').addEventListener('click',  () => {
   reverseanimation()
   button.textContent = '⏸';
   started = true;
   reversing = true;
 })
 
-document.getElementById('slow-btn').addEventListener('click', async() =>{
+document.getElementById('slow-btn').addEventListener('click', () =>{
   slowdown()
   button.textContent = '⏸';
   started = true;
