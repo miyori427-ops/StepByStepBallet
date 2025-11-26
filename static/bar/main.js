@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import GUI from 'lil-gui';
 
 let renderer, scene, camera, obj;
-let animationId, mixer, gui, mainAction;
+let mixer, gui, mainAction;
 let isAnimating = false;
 
 export function loadModel() {
@@ -42,15 +42,15 @@ export function loadModel() {
     }
 
     const loader = new GLTFLoader();
-    loader.load(window.modelPath, (gltf) => {//非同期処理
+    loader.load(window.modelPath, (gltf) => {
     obj = gltf.scene;
     obj.scale.set(1, 1, 1);
     obj.position.set(0, -3, 0);
     scene.add(obj);
 
     if (gltf.animations.length > 0) {
-    mixer = new THREE.AnimationMixer(obj);//どのオブジェクトにアニメーションを適用するか
-    mainAction = mixer.clipAction(gltf.animations[0]);//どのアニメーションを使うか　clip action ,Returns an AnimationAction for the passed clip
+    mixer = new THREE.AnimationMixer(obj);
+    mainAction = mixer.clipAction(gltf.animations[0]);
     mainAction.play();
     mainAction.paused = true;
     mixer.update(0);
@@ -63,9 +63,11 @@ export function loadModel() {
 let clock = new THREE.Clock(); 
 
 function animate() {
-    animationId = requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
     const delta = clock.getDelta();
     if(mixer && isAnimating) {
+        mainAction.paused = false;
+        mainAction.play();
         mixer.update(delta);
     }
 
@@ -74,10 +76,6 @@ function animate() {
 
 export function startAnimation() {
     isAnimating=true;
-    if(mainAction){
-            mainAction.paused = false;
-            mainAction.play();
-        }
         if (mixer) {
             mixer.timeScale=1.0;
         }
